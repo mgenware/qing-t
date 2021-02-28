@@ -1,0 +1,45 @@
+module.exports = {
+  // Starts development mode: watches and compiles all source files including tests.
+  dev: {
+    run: ['#clean', 'tsc -b tests -w'],
+    envGroups: ['development'],
+  },
+
+  // Runs tests (you need to build the project first).
+  t: {
+    run: 'web-test-runner dist_tests/**/*.test.js --node-resolve',
+  },
+  // Runs tests in watch mode (you need to build the project first).
+  tw: {
+    run: 'web-test-runner dist_tests/**/*.test.js --node-resolve --watch',
+  },
+
+  // Cleans, lints, compiles sources and runs tests.
+  build: {
+    run: ['#clean', 'tsc -b tests', '#lint', '#t'],
+    envGroups: ['production'],
+  },
+
+  // Deletes compiled files, auto triggered by `yarn r dev` or `yarn r build`.
+  clean: {
+    run: {
+      del: ['dist', 'dist_tests'],
+    },
+  },
+
+  // Lints the project using ESLint, auto triggered by `yarn r build`.
+  lint: {
+    run: 'eslint --max-warnings 0 --ext .ts src/ tests/',
+  },
+
+  _: {
+    envGroups: {
+      production: {
+        NODE_ENV: 'production',
+      },
+      development: {
+        NODE_ENV: 'development',
+      },
+    },
+  },
+};
