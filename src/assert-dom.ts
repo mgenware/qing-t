@@ -13,4 +13,8 @@ export class tDOM {
   static isInlineBlockElement(element: HTMLElement) {
     expect(window.getComputedStyle(element).display).to.eq('inline-block');
   }
+
+  static isFlexElement(element: HTMLElement) {
+    expect(window.getComputedStyle(element).display).to.eq('flex');
+  }
 }
