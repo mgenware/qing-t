@@ -1,7 +1,7 @@
 {
   "name": "qing-t",
   "version": "5.0.0",
-  "description": "Testing utils used in qing",
+  "description": "DOM testing utils",
   "type": "module",
   "exports": "./dist/main.js",
   "types": "./dist/main.d.ts",
