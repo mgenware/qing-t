@@ -1,4 +1,4 @@
-import { fixture, html, tDOM } from '../dist/main';
+import { fixture, html, tDOM } from '../dist/main.js';
 
 it('isInlineElement', async () => {
   const el = await fixture<HTMLElement>(html` <my-element></my-element> `);
