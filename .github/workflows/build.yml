@@ -16,4 +16,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm i
+      - run: sudo npx playwright install-deps webkit
       - run: npm test
