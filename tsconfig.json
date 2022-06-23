@@ -1,3 +1,7 @@
 {
-  "extends": "mgenware-tsconfig-browser-x"
+  "extends": "mgenware-tsconfig-browser",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  }
 }
