@@ -1,21 +1,21 @@
-import { fixture, html, tDOM } from '../dist/main.js';
+import { fixture, html, domTesting } from '../dist/main.js';
 
 it('isInlineElement', async () => {
   const el = await fixture<HTMLElement>(html`<my-element></my-element>`);
-  tDOM.isInlineElement(el);
+  await domTesting.isInlineElement(el);
 });
 
 it('isBlockElement', async () => {
   const el = await fixture<HTMLElement>(html`<div></div>`);
-  tDOM.isBlockElement(el);
+  await domTesting.isBlockElement(el);
 });
 
 it('isInlineBlockElement', async () => {
   const el = await fixture<HTMLElement>(html`<div style="display:inline-block"></div>`);
-  tDOM.isInlineBlockElement(el);
+  await domTesting.isInlineBlockElement(el);
 });
 
 it('isFlexElement', async () => {
   const el = await fixture<HTMLElement>(html`<div style="display:flex"></div>`);
-  tDOM.isFlexElement(el);
+  await domTesting.isFlexElement(el);
 });
